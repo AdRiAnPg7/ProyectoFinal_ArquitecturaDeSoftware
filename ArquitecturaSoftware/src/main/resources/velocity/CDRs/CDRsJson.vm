@@ -1,0 +1,5 @@
+[
+#foreach($CDR in $CDRs)
+{"telefonoOrigen": "$CDR.obtenerNumeroDelTelefonoOrigen()","telefonoDestino": "$CDR.obtenerNumeroDelTelefonoDestino()","fecha": "$CDR.obtenerFecha()","horaInicioLlamada": "$CDR.obtenerHoraInicioLlamada()","duracionLlamada": "$CDR.obtenerDuracionLlamada()","costo": "$CDR.obtenerCosto()"}#if( $foreach.hasNext ),#end
+#end
+]

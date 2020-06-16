@@ -1,0 +1,5 @@
+[
+#foreach($Usuario in $Usuarios)
+{"nombre": "$Usuario.obtenerNombre()","numero": "$Usuario.obtenerNumero()","plan": "$Usuario.obtenerPlanString()"}#if( $foreach.hasNext ),#end
+#end
+]
