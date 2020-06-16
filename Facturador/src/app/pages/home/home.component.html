@@ -1,0 +1,49 @@
+<!-- Main navigation -->
+<header>
+  <!--Navbar-->
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <mdb-navbar-brand>
+      <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"><strong>Vodafone</strong></a>
+    </mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active waves-light" mdbWavesEffect>
+          <a class="nav-link">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a class="nav-link" routerLink="/telefono">Facturar</a>
+        </li>
+
+      </ul>
+
+    </links>
+  </mdb-navbar>
+
+  <div class="view jarallax"
+    style="background-image: url('assets/images/wallpaper.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-12 mb-4 white-text text-center">
+            <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
+              data-wow-delay="0.3s"><strong>Facturador</strong></h1>
+            <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+            <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>Genera Tu
+                Factura</strong></h5>
+            <a mdbBtn color="white" outline="true" mdbWavesEffect class="wow fadeInDown" data-wow-delay="0.4s"
+              routerLink="/telefono">Empezar</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>

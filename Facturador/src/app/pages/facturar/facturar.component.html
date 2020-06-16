@@ -1,0 +1,100 @@
+<header>
+  <!--Navbar-->
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+    <mdb-navbar-brand>
+      <a class="logo navbar-brand waves-light" mdbWavesEffect href="#"><strong>VODAFONE</strong></a>
+    </mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a class="nav-link" routerLink="/inicio">Inicio </a>
+        </li>
+        <li class="nav-item active waves-light" mdbWavesEffect>
+          <a class="nav-link">Facturar<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
+
+
+
+  <div class="view jarallax"
+    style="background-image: url('assets/images/wallpaper2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+
+    <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
+
+      <div class="container">
+
+        <div class="row">
+ 
+          <div class="col-md-12 mb-2 white-text text-center">
+            <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
+              data-wow-delay="0.3s"><strong>Facturador</strong></h1>
+            <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+
+            <ng-container *ngIf="!hayFactura">
+              <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s">
+                El Numero {{telefono}} No tiene registros
+              </h5>
+            </ng-container>
+
+            <ng-container *ngIf="hayFactura">
+              <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s">
+                Los Registros del Numero {{telefono}} son los siguientes:
+              </h5>
+
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-12 mx-auto">
+                    <br>
+                  </div>
+                </div>
+                <table mdbTable class="z-depth-1">
+                  <thead>
+                    <tr class="white-text">
+                      <th *ngFor="let head of headElements; let i = index" scope="col">
+                        {{head}}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="white-text" *ngFor="let el of facturas; let i = index">
+
+                      <td>{{el.anio}}</td>
+                      <td *ngIf="el.mes== '01'">ENERO</td>
+                      <td *ngIf="el.mes== '02'">FEBRERO</td>
+                      <td *ngIf="el.mes== '03'">MARZO</td>
+                      <td *ngIf="el.mes== '04'">ABRIL</td>
+                      <td *ngIf="el.mes== '05'">MAYO</td>
+                      <td *ngIf="el.mes== '06'">JUNIO</td>
+                      <td *ngIf="el.mes== '07'">JULIO</td>
+                      <td *ngIf="el.mes== '08'">AGOSTO</td>
+                      <td *ngIf="el.mes== '09'">SEPTIEMBRE</td>
+                      <td *ngIf="el.mes== '10'">OCTUBRE</td>
+                      <td *ngIf="el.mes== '11'">NOVIEMBRE</td>
+                      <td *ngIf="el.mes== '12'">DICIEMBRE</td>
+
+                      <td class="field-functions">
+                        <a mdbBtn color="white" outline="true" mdbWavesEffect class="wow fadeInDown"
+                          data-wow-delay="0.4s"
+                          routerLink="/telefono/{{telefono}}/facturar/{{el.anio}}/{{el.mes}}/factura">
+                          Facturar</a>
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </ng-container>
+
+          </div>
+
+        </div>
+  
+      </div>
+
+    </div>
+
+  </div>
+
+</header>

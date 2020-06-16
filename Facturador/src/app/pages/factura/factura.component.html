@@ -1,0 +1,53 @@
+<body>
+  <div id="contentToConvert">
+    <header class="clearfix">
+      <div id="logo">
+        <img src="assets/images/logo.png">
+      </div>
+      <h1>Factura</h1>
+      <div id="company" class="clearfix">
+        <div>Vodafone</div>
+        <div>Cochabamba - Bolivia</div>
+        <div>Vodafone@gmail.com</div>
+      </div>
+      <div id="project">
+        <div><span>PROYECTO</span> Arquitectura De Software</div>
+        <div><span>CLIENTE</span> {{usuario}} </div>
+        <div><span>PLAN</span> {{usuarioPlan}} </div>
+        <div><span>FECHA</span> {{mes}} / {{anio}}</div>
+      </div>
+    </header>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="service">SERVICIO</th>
+          <th class="desc">DESCRIPCION</th>
+          <th>PRECIO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let el of cdrs">
+          <td class="service">LLAMADA</td>
+          <td class="desc">La duracion de la llamada fue {{el.duracionLlamada}}</td>
+          <td class="total">{{el.costo}} Bs.</td>
+
+        </tr>
+
+        <tr>
+          <td colspan="2" class="grand total">PRECIO TOTAL</td>
+          <td class="grand total">{{costoTotal}} Bs.</td>
+        </tr>
+
+
+      </tbody>
+    </table>
+    <hr class="hr-black my-4">
+  </div>
+
+
+  <div class="col-md-12 mb-4 white-text text-center">
+    <a mdbBtn color="black" outline="true" mdbWavesEffect class="wow fadeInDown" (click)="captureScreen()">
+      Descargar</a>
+  </div>
+</body>
